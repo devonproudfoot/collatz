@@ -16,9 +16,12 @@ end
 # Will loop through a start and end point and return the number with the longest collatz sequence
 def find_longest_collatz(start, stop)
   longest_collatz = 0
+  longest_collatz_count = 0
+
   (start..stop).each do |i|
-    if collatz_length(i) > longest_collatz
+    if collatz_length(i) > longest_collatz_count
       longest_collatz = i
+      longest_collatz_count = collatz_length(i)
     end
   end
   return longest_collatz
