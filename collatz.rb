@@ -1,5 +1,5 @@
 # Takes the argument and returns the length of the collatz sequence
-def find_collatz(num)
+def collatz_length(num)
   count = 1
 
   while num > 1
@@ -15,13 +15,13 @@ end
 
 # Will loop through a start and end point and return the number with the longest collatz sequence
 def find_longest_collatz(start, stop)
-  top_collatz = 0
+  longest_collatz = 0
   (start..stop).each do |i|
-    if find_collatz(i) > top_collatz
-      top_collatz = i
+    if collatz_length(i) > longest_collatz
+      longest_collatz = i
     end
   end
-  return top_collatz
+  return longest_collatz
 end
 
 puts find_longest_collatz(1, 1000000)
